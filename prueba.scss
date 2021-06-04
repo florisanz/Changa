@@ -1,0 +1,781 @@
+
+ /* para todas */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: "Antique";
+	src: url("antique.ttf");
+}
+
+ @import "biblioteca";
+
+ $medida1: 150px;
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  margin: 10px 0 0 50px;
+  z-index: 1;
+  text-align: left;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: blue;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: white;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer; 
+  opacity: 0; 
+  z-index: 2; 
+   -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: white;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: blue;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu{ 
+  font-size: 2rem;
+  position: absolute;
+  width: 270px;
+  height:100vh;
+  margin: -47px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: black;
+  list-style-type: none;
+ 
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu {
+    font-family: "Antique";
+	  }
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+#menuToggle input:checked ~ ol
+{
+  transform: none;
+}
+
+img {
+	width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+.nav {  
+   	grid-area: nav;
+	background-color: black;
+} 
+
+/* index */
+.grid { /* GRID EN DESKTOP*/ 
+	border-color: black;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(4,25%);
+    grid-template-rows: repeat(3, 33%);
+    grid-template-areas: "pizza1 texto1 horno horno"  
+                         "pizza1 pizza2 flama flama"  
+                         "pizza3 empanada libre pizza4";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+
+.parte1 {
+	background-image: url("./imagenes/img-index/1.jpg");
+	grid-area: pizza1;
+	background-size: cover;
+	background-position: center;
+	transition: all 5s;
+}
+.parte2 {
+	background-image: url("./imagenes/img-index/2.jpg");
+	grid-area: texto1;
+	background-size: cover;
+	background-position: center;
+}
+.parte3 {
+	background-image: url("./imagenes/img-index/3.jpg");
+	grid-area: horno;
+	background-size: cover;
+	background-position: center;
+}
+.parte4 {
+	background-image: url("./imagenes/img-index/4.jpg");
+	grid-area: pizza2;
+	background-size: cover;
+	background-position: center;
+}
+.parte5 {
+	background-image: url("./imagenes/img-index/5.jpg");
+	grid-area: flama;
+	background-size: cover;
+	background-position: center;
+}
+.parte6 {
+	background-image: url("./imagenes/img-index/6.jpg");
+	grid-area: pizza3;
+	background-size: cover;
+	background-position: center;
+}
+.parte7 {
+	background-image: url("./imagenes/img-index/7.jpg");
+	grid-area: empanada;
+	background-size: cover;
+	background-position: center;
+}
+.parte8 {
+	background-image: linear-gradient(to right, #ff4200 , #2e2abc);
+	grid-area: libre;
+	background-size: cover;
+	background-position: center;
+}
+.parte9 {
+	background-image: url("./imagenes/img-index/9.jpg");
+	grid-area: pizza4;
+	background-size: cover;
+	background-position: center;
+}
+
+.parte9:hover {
+   transform: rotate(45deg);
+}
+.what:hover {
+	transform:translate(50px);
+}
+.parte1:hover {
+	width: 105%;
+	height: 105%;
+}
+.what {
+	position:relative;
+	left:-20px;
+   animation-duration: 4s;
+   animation-name: opacidad;
+   color: white;
+	font-family: "Antique"
+}
+
+
+@keyframes opacidad {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+@media(max-width: 1024px){/*GRID EN TABLET*/
+	.grid{
+	height:1480px;
+	grid-template-columns: 35% 35% 30%;
+    grid-template-rows: repeat(4, 370px);
+    grid-template-areas: "pizza1 texto1 pizza2"  
+                         "pizza1 horno horno"  
+                         "flama flama pizza3" 
+                         "empanada libre pizza4";
+
+	}
+	#menu{
+		height:1480px;
+	}
+}
+@media(max-width: 768px){ /*GRID PARA CELULARES*/
+	.grid{
+	height: 1200px;
+	grid-template-columns: 45% 55%;
+    grid-template-rows: 22% 15% 18% 15% 15% 15%;
+    grid-template-areas: "pizza1 texto1"  
+                         "pizza1 pizza2"
+                         "horno horno" 
+                         "pizza3 pizza4" 
+                         "flama flama " 
+                         "empanada libre";
+
+	}
+	#menu{
+		width:200px;
+		height:1200px;
+	}
+	.what {
+	left:10px;
+	top: 100px;
+   }
+}
+
+
+/* fin de index*/ 
+
+/*servicio*/
+#servicios_fondo {
+	position:absolute;
+	top:0px;
+	left: 0px;
+   	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: (4, auto);
+    grid-template-areas: "principal horno"
+	                     "principal info"
+	                     "piza-manos carro"
+                         "piza-manos carro"
+						 ;
+	grid-row-gap: 0px;
+    grid-column-gap: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.principal {
+	position:absolute;
+	top:0px;
+	left: 0px;
+	grid-area: principal;
+	background-color:$primario;
+	background-size: cover;
+	padding: 20%;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+  }
+  
+  .carro {
+   	grid-area: carro;
+	background-color: #2e2abc;
+	-ms-flex-item-align: stretch;
+ }
+  
+  .horno {
+	grid-area: horno;
+	-ms-flex-item-align: stretch;
+	-ms-grid-row-align: stretch;
+	align-self: stretch;
+	
+ }
+  
+  .piza-manos {
+  
+	grid-area: piza-manos;
+	-ms-flex-item-align: stretch;
+	-ms-grid-row-align: stretch;
+	align-self: stretch;
+  }
+  
+  .seccion1 {
+	color: white;
+	font-family: antique;
+	font-size: 50px;
+	background-color: none;
+  }
+  
+  .parrafoservicio {
+ 	color: white;
+	font-family: open sans;
+	font-size: 16px;
+	text-align: center;
+  }
+  
+  .pregunta {
+	font-family: antique;
+	text-align: center;
+	text-decoration: overline;
+	font-size: 30px;
+	color: white;
+ }
+  
+  .respuesta {
+	font-family: open sans;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+ }
+  
+  .info_div {
+	grid-area: info;
+	background-color: #ff4200;
+	font-family: open sans;
+	font-size: 16px;
+	color: white;
+	background-size: cover;
+	padding: 30px;
+  }
+  @media(max-width: 1024px){/*GRID EN TABLET*/
+	.grid{
+	height:1480px;
+	grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 370px);
+    grid-template-areas: "principal horno"
+	"principal info"
+	"piza-manos carro"
+	"piza-manos carro"
+	;
+	}
+	#menu{
+		height:1480px;
+	}
+}
+  @media (max-width: 768px) {/*GRID CELULAR*/
+	#servicios_fondo {
+	  height: 100%;
+	  grid-template-columns: 100%;
+	  grid-template-rows: repeat(5, auto);
+	  grid-template-areas: 
+	  "horno"
+	  "principal "
+	  "principal"
+	  "principal"
+	  "piza-manos"
+	  "info"
+	  "carro";
+	}
+  }
+/* fin de seccion servicio*/
+
+/*productos*/
+.productos_fondo {
+	border-color: black;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "naranja piza"
+	                     "amarillo empas";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.pizzas_lista {
+	grid-area: naranja;
+		h1{
+		font-family: "Antique";
+		font-size: 3fr;
+	}
+	h2 {
+		font-family: "Open Sans";
+		font-size: 20px;
+
+	}
+	ul {
+		font-family: "Open Sans";
+		font-size: 12px;
+	}
+color: white;
+padding: 100px;
+background-color: $primario;
+}
+
+.empanadas_lista {
+	grid-area: amarillo;
+	h1{
+		font-family: "Antique";
+		font-size: 3fr;
+	}
+	h2 {
+		font-family: "Open Sans";
+		font-size: 20px;
+
+	}
+	ul {
+		font-family: "Open Sans";
+		font-size: 12px;
+	}
+color: white;
+background-color: $terciario;
+padding: 100px;
+}
+.empas1 {
+	grid-area: empas;
+	background-image: url("./imagenes/img-productos/empa.png");
+	margin: 0; 
+    -ms-flex-item-align: stretch;
+	-ms-grid-row-align: stretch;
+	align-self: stretch;
+
+	h1{
+		font-family: antique;
+	font-size: 50px;
+	color: white;
+	}
+}
+ .pizas {
+ 	grid-area: piza;
+ 	object-fit: cover;
+ }
+ .piza-empas {
+	 background-color: $secundario;
+ }
+ @media(max-width: 1024px){/*GRID EN TABLET*/
+	.grid{
+	height:1480px;
+	grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 370px);
+    grid-template-areas: "naranja pizas"
+	"empas amarillo";
+	}
+	#menu{
+		height:1480px;
+	}
+}
+  @media (max-width: 768px) {/*GRID CELULAR*/
+	.productos_fondo {
+	  height: 100%;
+	  grid-template-columns: 100%;
+	  grid-template-rows: repeat(4, 370px);
+	  grid-template-areas: 
+	  "pizas"
+	  "naranja"
+	  "empas"
+	  "amarillo"
+	}
+  }
+
+/* contacto*/
+#contacto_fondo {
+	position:absolute;
+	top:0px;
+	left: 0px;
+  	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 30% 30% 25% 15%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "formulario formulario formulario redondo" 
+                         "napo napo contacto contacto";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+
+.napo {
+	grid-area: napo;
+	align-self: stretch;
+}
+.redondo{
+	grid-area: redondo;
+	align-self: stretch;
+	object-fit: cover;
+}
+.escribinos{
+	font-family: Antique;
+	display: inline-block;
+	position: absolute;
+	top: $medida1/3;
+	left:500px;
+	color: white;
+	width: 600px;
+}
+.amarillo {
+	grid-area: formulario; 
+	background-color: $terciario;
+	background-size: cover;
+	position: center;
+	margin: 0px;
+}
+form {
+	font-family: open sans, bold;
+	font-size: 14px;
+	line-height: 26px;
+	position: relative;
+	top: 165px;
+	left:500px;
+	color: white;
+	width:500px;
+}
+input {
+	border-color: transparent;
+    width: $medida1.2;
+    background-color: white;
+    outline: none;
+    border-radius: 200px;
+    height: 20px;
+}
+textarea {
+    border-color: transparent;
+    background   : rgba(0,0,0,.1);
+    outline: none;
+    display : inline-block;
+    padding : 10px;
+    margin  : 10px 0 0 -10px;
+    width   : 340px;
+    height  : 360px;
+    border-radius: 500px;
+    resize  : none;
+    overflow: auto;
+}
+.flex {
+    grid-area: contacto;
+	color: white;	
+	font-family: open sans;
+	font-size: $medida1/10;
+	margin: 0px;
+	padding: 0px;
+	background-color:$secundario;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-between;
+}
+.seccion4  { 
+	font-family: antique;
+	font-size: $medida1/3;
+	position: absolute;
+	top:100px;
+	left:250px;
+	color: white;
+}
+.borrar { 
+	background-color:$primario;
+	font-family: antique;
+	color: white;
+	line-height : 1;
+}
+
+.enviar {
+	background-color:$primario;
+		font-family: antique;
+	color: white;
+	line-height : 1;
+	
+}
+@media(max-width: 1024px){/*GRID EN TABLET*/
+	#contacto_fondo{
+	height:1480px;
+	grid-template-columns: repeat(3, auto);
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "formulario formulario  redondo" 
+                         "napo napo contacto contacto";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+		}
+		#menu{
+			height:1480px;
+		}
+	}
+@media(max-width: 768px){ /*GRID PARA CELULARES*/
+	#contacto_fondo{
+	height: 1200px;
+	grid-template-columns: 50% 50%;
+    grid-template-rows: repeat (4, 370px);
+    grid-template-areas: "formulario formulario"
+	                     "formulario formulario" 
+                         "redondo contacto"
+						 "napo napo";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+	#menu{
+		width:200px;
+		height:1200px;
+	}
+}
+/* fin de seccion contacto */
+
+/* eventos */ 
+#eventos_fondo {
+  	display: grid;
+	position:absolute;
+	top:0px;
+	left: 0px;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat (3, auto);
+    grid-template-rows: repeat (4,auto);
+    grid-template-areas: "hemos  hemos  bombo"   
+                         "murga murga bombo"
+                         "presupuesto fuego dj"
+						 "presupuesto fuego dj"
+						 ;
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+.hemos {
+	grid-area: hemos;
+    font-family: antique;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: white;
+	background-color: #ff4200;
+	background-size: cover; 
+	margin: 0; 
+	padding: 5rem;
+}
+.musiques {
+	grid-area: presupuesto;
+	font-family: open sans, bold;
+	text-align: center;
+	color: white;
+	background-color: #ff4200;
+	align-self: stretch; 
+	margin:0;				
+	padding: 3rem;			
+	}
+.bombo {
+	grid-area: bombo;
+	align-self: stretch;
+}
+.murga {
+	grid-area: murga;
+	align-self: stretch;
+}
+.fuego{
+	grid-area: fuego;
+	background-color:#2e2abc;
+	align-self: stretch;
+}
+.seccion3 { 
+	grid-area: dj;
+	font-family: "Antique";
+	font-size: 50px;
+	color: white;
+	background-image: url(./imagenes/img-eventos/choco.png);
+    background-size: cover;
+    margin: 0px;
+}
+#si-queres {
+	font-size: 20px;
+	font-family: open sans, bold; 
+}
+button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 200px;
+    position: absolute;
+    top: 1000px;
+    left: 250px;
+    color: $primario;
+    background-color:white; 
+    font-family: "Antique"; 
+}
+@media(max-width: 1024px){/*GRID EN TABLET*/
+	#eventos_fondo{
+	height:1480px;
+	grid-template-columns: repeat (3, auto);
+    grid-template-rows: repeat (4,auto);
+    grid-template-areas: "hemos  hemos  bombo"   
+                         "murga murga bombo"
+                         "presupuesto fuego dj"
+						 "presupuesto fuego dj"
+						 ;
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+		}
+		#menu{
+			height:1480px;
+		}
+	}
+@media(max-width: 768px){ /*GRID PARA CELULARES*/
+	#eventos_fondo{
+	height: 1200px;
+	grid-template-columns: 50% 50%;
+    grid-template-rows: repeat (4, 370px);
+    grid-template-areas: "hemos fuego"
+	                     "murga murga" 
+                         "presupuesto dj"
+						 "presupuesto bombo";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+	#menu{
+		width:200px;
+		height:1200px;
+	}
+}

@@ -1,0 +1,927 @@
+/* para todas */
+body {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Antique";
+  src: url("antique.ttf");
+}
+
+@font-face {
+  font-family: "Antique";
+  src: url("antique.ttf");
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  margin: 10px 0 0 50px;
+  z-index: 1;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: blue;
+  text-align: left;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: white;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menuToggle span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+          transform: rotate(45deg) translate(-2px, -1px);
+  background: blue;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  font-size: 2rem;
+  position: absolute;
+  width: 270px;
+  height: 100vh;
+  margin: -47px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: black;
+  list-style-type: none;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu {
+  font-family: "Antique";
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ol {
+  -webkit-transform: none;
+          transform: none;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: black;
+}
+
+/* index */
+.grid {
+  /* GRID EN DESKTOP*/
+  border-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -ms-grid;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+  -ms-grid-rows: (33%)[3];
+      grid-template-rows: repeat(3, 33%);
+      grid-template-areas: "pizza1 texto1 horno horno"   "pizza1 pizza2 flama flama"   "pizza3 empanada libre pizza4";
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+}
+
+.parte1 {
+  background-image: url("./imagenes/img-index/1.jpg");
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: pizza1;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: all 5s;
+  transition: all 5s;
+}
+
+.parte2 {
+  background-image: url("./imagenes/img-index/2.jpg");
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: texto1;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte3 {
+  background-image: url("./imagenes/img-index/3.jpg");
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: horno;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte4 {
+  background-image: url("./imagenes/img-index/4.jpg");
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: pizza2;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte5 {
+  background-image: url("./imagenes/img-index/5.jpg");
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: flama;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte6 {
+  background-image: url("./imagenes/img-index/6.jpg");
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: pizza3;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte7 {
+  background-image: url("./imagenes/img-index/7.jpg");
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: empanada;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte8 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff4200), to(#2e2abc));
+  background-image: linear-gradient(to right, #ff4200, #2e2abc);
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: libre;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte9 {
+  background-image: url("./imagenes/img-index/9.jpg");
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: pizza4;
+  background-size: cover;
+  background-position: center;
+}
+
+.parte9:hover {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.what:hover {
+  -webkit-transform: translate(50px);
+          transform: translate(50px);
+}
+
+.parte1:hover {
+  width: 105%;
+  height: 105%;
+}
+
+.what {
+  position: relative;
+  left: -20px;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: opacidad;
+          animation-name: opacidad;
+  color: white;
+  font-family: "Antique";
+}
+
+@-webkit-keyframes opacidad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacidad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  /*GRID EN TABLET*/
+  .grid {
+    height: 1480px;
+    -ms-grid-columns: 35% 35% 30%;
+        grid-template-columns: 35% 35% 30%;
+    -ms-grid-rows: (370px)[4];
+        grid-template-rows: repeat(4, 370px);
+        grid-template-areas: "pizza1 texto1 pizza2"   "pizza1 horno horno"   "flama flama pizza3"  "empanada libre pizza4";
+  }
+  #menu {
+    height: 1480px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*GRID PARA CELULARES*/
+  .grid {
+    height: 1200px;
+    -ms-grid-columns: 45% 55%;
+        grid-template-columns: 45% 55%;
+    -ms-grid-rows: 22% 15% 18% 15% 15% 15%;
+        grid-template-rows: 22% 15% 18% 15% 15% 15%;
+        grid-template-areas: "pizza1 texto1"   "pizza1 pizza2" "horno horno"  "pizza3 pizza4"  "flama flama "  "empanada libre";
+  }
+  #menu {
+    width: 200px;
+    height: 1200px;
+  }
+  .what {
+    left: 10px;
+    top: 100px;
+  }
+}
+
+/* fin de index*/
+/*servicio*/
+#servicios_fondo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 4, auto;
+      grid-template-rows: 4, auto;
+      grid-template-areas: "principal horno" "principal info" "piza-manos carro" "piza-manos carro";
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.principal {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: principal;
+  background-color: #fc4404;
+  background-size: cover;
+  padding: 20%;
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.carro {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: carro;
+  background-color: #2e2abc;
+  -ms-flex-item-align: stretch;
+}
+
+.horno {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: horno;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.piza-manos {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: piza-manos;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.seccion1 {
+  color: white;
+  font-family: antique;
+  font-size: 50px;
+  background-color: none;
+}
+
+.parrafoservicio {
+  color: white;
+  font-family: open sans;
+  font-size: 16px;
+  text-align: center;
+}
+
+.pregunta {
+  font-family: antique;
+  text-align: center;
+  text-decoration: overline;
+  font-size: 30px;
+  color: white;
+}
+
+.respuesta {
+  font-family: open sans;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+
+.info_div {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: info;
+  background-color: #ff4200;
+  font-family: open sans;
+  font-size: 16px;
+  color: white;
+  background-size: cover;
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  /*GRID EN TABLET*/
+  .grid {
+    height: 1480px;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: (370px)[4];
+        grid-template-rows: repeat(4, 370px);
+        grid-template-areas: "principal horno" "principal info" "piza-manos carro" "piza-manos carro";
+  }
+  #menu {
+    height: 1480px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*GRID CELULAR*/
+  #servicios_fondo {
+    height: 100%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: (auto)[5];
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "horno" "principal " "principal" "principal" "piza-manos" "info" "carro";
+  }
+}
+
+/* fin de seccion servicio*/
+/*productos*/
+.productos_fondo {
+  border-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -ms-grid;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+      grid-template-areas: "naranja piza" "amarillo empas";
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.pizzas_lista {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: naranja;
+  color: white;
+  padding: 100px;
+  background-color: #fc4404;
+}
+
+.pizzas_lista h1 {
+  font-family: "Antique";
+  font-size: 3fr;
+}
+
+.pizzas_lista h2 {
+  font-family: "Open Sans";
+  font-size: 20px;
+}
+
+.pizzas_lista ul {
+  font-family: "Open Sans";
+  font-size: 12px;
+}
+
+.empanadas_lista {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: amarillo;
+  color: white;
+  background-color: #f5b20c;
+  padding: 100px;
+}
+
+.empanadas_lista h1 {
+  font-family: "Antique";
+  font-size: 3fr;
+}
+
+.empanadas_lista h2 {
+  font-family: "Open Sans";
+  font-size: 20px;
+}
+
+.empanadas_lista ul {
+  font-family: "Open Sans";
+  font-size: 12px;
+}
+
+.empas1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: empas;
+  background-image: url("./imagenes/img-productos/empa.png");
+  margin: 0;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.empas1 h1 {
+  font-family: antique;
+  font-size: 50px;
+  color: white;
+}
+
+.pizas {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: piza;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.piza-empas {
+  background-color: #2e2abc;
+}
+
+@media (max-width: 1024px) {
+  /*GRID EN TABLET*/
+  .grid {
+    height: 1480px;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: (370px)[4];
+        grid-template-rows: repeat(4, 370px);
+        grid-template-areas: "naranja pizas" "empas amarillo";
+  }
+  #menu {
+    height: 1480px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*GRID CELULAR*/
+  .productos_fondo {
+    height: 100%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: (370px)[4];
+        grid-template-rows: repeat(4, 370px);
+        grid-template-areas: "pizas" "naranja" "empas" "amarillo";
+  }
+}
+
+/* contacto*/
+#contacto_fondo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 30% 30% 25% 15%;
+      grid-template-columns: 30% 30% 25% 15%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+      grid-template-areas: "formulario formulario formulario redondo"  "napo napo contacto contacto";
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+}
+
+.napo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: napo;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.redondo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: redondo;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.escribinos {
+  font-family: Antique;
+  display: inline-block;
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  color: white;
+  width: 600px;
+}
+
+.amarillo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: formulario;
+  background-color: #f5b20c;
+  background-size: cover;
+  position: center;
+  margin: 0px;
+}
+
+form {
+  font-family: open sans, bold;
+  font-size: 14px;
+  line-height: 26px;
+  position: relative;
+  top: 165px;
+  left: 500px;
+  color: white;
+  width: 500px;
+}
+
+input {
+  border-color: transparent;
+  width: 150px 0.2;
+  background-color: white;
+  outline: none;
+  border-radius: 200px;
+  height: 20px;
+}
+
+textarea {
+  border-color: transparent;
+  background: rgba(0, 0, 0, 0.1);
+  outline: none;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 0 0 -10px;
+  width: 340px;
+  height: 360px;
+  border-radius: 500px;
+  resize: none;
+  overflow: auto;
+}
+
+.flex {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: contacto;
+  color: white;
+  font-family: open sans;
+  font-size: 15px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #2e2abc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.seccion4 {
+  font-family: antique;
+  font-size: 50px;
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  color: white;
+}
+
+.borrar {
+  background-color: #fc4404;
+  font-family: antique;
+  color: white;
+  line-height: 1;
+}
+
+.enviar {
+  background-color: #fc4404;
+  font-family: antique;
+  color: white;
+  line-height: 1;
+}
+
+@media (max-width: 1024px) {
+  /*GRID EN TABLET*/
+  #contacto_fondo {
+    height: 1480px;
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "formulario formulario  redondo"  "napo napo contacto contacto";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+  }
+  #menu {
+    height: 1480px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*GRID PARA CELULARES*/
+  #contacto_fondo {
+    height: 1200px;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: repeat 4, 370px;
+        grid-template-rows: repeat 4, 370px;
+        grid-template-areas: "formulario formulario" "formulario formulario"  "redondo contacto" "napo napo";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+  }
+  #menu {
+    width: 200px;
+    height: 1200px;
+  }
+}
+
+/* fin de seccion contacto */
+/* eventos */
+#eventos_fondo {
+  display: -ms-grid;
+  display: grid;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: repeat 3, auto;
+      grid-template-columns: repeat 3, auto;
+  -ms-grid-rows: repeat 4, auto;
+      grid-template-rows: repeat 4, auto;
+      grid-template-areas: "hemos  hemos  bombo"    "murga murga bombo" "presupuesto fuego dj" "presupuesto fuego dj";
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+}
+
+.hemos {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: hemos;
+  font-family: antique;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: white;
+  background-color: #ff4200;
+  background-size: cover;
+  margin: 0;
+  padding: 5rem;
+}
+
+.musiques {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: presupuesto;
+  font-family: open sans, bold;
+  text-align: center;
+  color: white;
+  background-color: #ff4200;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  margin: 0;
+  padding: 3rem;
+}
+
+.bombo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: bombo;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.murga {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: murga;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.fuego {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: fuego;
+  background-color: #2e2abc;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.seccion3 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: dj;
+  font-family: "Antique";
+  font-size: 50px;
+  color: white;
+  background-image: url(./imagenes/img-eventos/choco.png);
+  background-size: cover;
+  margin: 0px;
+}
+
+#si-queres {
+  font-size: 20px;
+  font-family: open sans, bold;
+}
+
+button {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 200px;
+  position: absolute;
+  top: 1000px;
+  left: 250px;
+  color: #fc4404;
+  background-color: white;
+  font-family: "Antique";
+}
+
+@media (max-width: 1024px) {
+  /*GRID EN TABLET*/
+  #eventos_fondo {
+    height: 1480px;
+    -ms-grid-columns: repeat 3, auto;
+        grid-template-columns: repeat 3, auto;
+    -ms-grid-rows: repeat 4, auto;
+        grid-template-rows: repeat 4, auto;
+        grid-template-areas: "hemos  hemos  bombo"    "murga murga bombo" "presupuesto fuego dj" "presupuesto fuego dj";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+  }
+  #menu {
+    height: 1480px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*GRID PARA CELULARES*/
+  #eventos_fondo {
+    height: 1200px;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: repeat 4, 370px;
+        grid-template-rows: repeat 4, 370px;
+        grid-template-areas: "hemos fuego" "murga murga"  "presupuesto dj" "presupuesto bombo";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+  }
+  #menu {
+    width: 200px;
+    height: 1200px;
+  }
+}
+/*# sourceMappingURL=prueba.css.map */
